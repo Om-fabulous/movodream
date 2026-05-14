@@ -37,15 +37,15 @@ export default function Home() {
   ];
 
   const featureImages = [
-    "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1074&auto=format&fit=crop", // Smart planning
-    "https://images.unsplash.com/photo-1480796927426-f609979314bd?q=80&w=1074&auto=format&fit=crop", // Hidden gems
-    "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1074&auto=format&fit=crop", // Crowd intelligence
-    "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1074&auto=format&fit=crop", // Route optimization
+    "https://images.unsplash.com/photo-1503221043305-f7498f8b7888?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8U21hcnQlMjBJdGluZXJhcnklMjBmb3IlMjB0cmF2ZWx8ZW58MHx8MHx8fDA%3D", // Smart planning
+    "https://images.unsplash.com/photo-1698380834552-59aca5613abf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFtcml0c2FyJTIwZm9vZHxlbnwwfHwwfHx8MA%3D%3D", // Hidden gems
+    "https://images.unsplash.com/photo-1603190287605-e6ade32fa852?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TGl2ZSUyMENyb3dkJTIwSW50ZWxsaWdlbmNlfGVufDB8fDB8fHww", // Crowd intelligence
+    "https://images.unsplash.com/photo-1594935975218-a3596da034a3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RHluYW1pYyUyMFJvdXRlJTIwT3B0aW1pemF0aW9ufGVufDB8fDB8fHww", // Route optimization
     "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1074&auto=format&fit=crop", // Food experiences
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1074&auto=format&fit=crop", // Live alerts
     "https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1074&auto=format&fit=crop", // Safety features
     "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1074&auto=format&fit=crop", // Support system
-    "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1074&auto=format&fit=crop", // Offline access
+    "https://images.unsplash.com/photo-1499591934245-40b55745b905?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWFwJTIwZXhwbGFpbmluZ3xlbnwwfHwwfHx8MA%3D%3D", // Offline access
   ];
 
   return (
@@ -241,7 +241,7 @@ export default function Home() {
                 duration: 4,
                 ease: "easeInOut"
               }}
-              className="absolute -bottom-32 -left-10 bg-white p-6 rounded-3xl shadow-2xl hidden md:block"
+              className="absolute -bottom-42 -left-10 bg-white p-6 rounded-3xl shadow-2xl hidden md:block"
             >
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#d80c8c] to-[#7b2cbf] flex items-center justify-center text-white">
@@ -626,19 +626,19 @@ export default function Home() {
               {
                 title: "Wagah Border",
                 desc: "Witness the spectacular daily retreat ceremony at the India-Pakistan border, a display of patriotism.",
-                image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=1074&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1598431416007-869a2a727f8b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FnYWglMjBib3JkZXJ8ZW58MHx8MHx8fDA%3D",
                 icon: Zap
               },
               {
                 title: "Jallianwala Bagh",
                 desc: "A historic garden and memorial of national importance, commemorating the tragic 1919 massacre.",
-                image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1074&auto=format&fit=crop",
+                image: "https://images.unsplash.com/photo-1730620775685-811aadc9ebdc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SmFsbGlhbndhbGElMjBCYWdofGVufDB8fDB8fHww",
                 icon: Heart
               },
               {
                 title: "Amritsari Cuisine",
                 desc: "Savor authentic flavors - from Amritsari kulcha to kulfi, a food lover's paradise.",
-                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1074&auto=format&fit=crop",
+                image: "https://media.istockphoto.com/id/1832452568/photo/aloo-paratha-or-gobi-paratha-also-known-as-potato-or-cauliflower-stuffed-flatbread-dish.jpg?s=1024x1024&w=is&k=20&c=SITUerpYSy8O6hxg-VYLfCIRN7ma6gh23XS-DInp_XM=",
                 icon: UtensilsCrossed
               },
               {
