@@ -341,7 +341,7 @@ export default function Home() {
                 <img
                   src="https://images.unsplash.com/photo-1623059508779-2542c6e83753?w=600&auto=format&fit=crop&q=60"
                   alt="Crowded tourist area in Amritsar"
-                  className="w-full h-[650px] object-cover hover:scale-110 transition duration-700"
+                  className="w-full h-[1050px] object-cover hover:scale-110 transition duration-700"
                 />
               </div>
             </motion.div>
@@ -350,8 +350,95 @@ export default function Home() {
       </section>
 
       {/* Introduction */}
-      <section className="py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+      <section className="py-28 relative overflow-hidden bg-gradient-to-br from-white via-pink-50/40 to-white">
+        {/* Decorative Gradient Orbs */}
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-10 right-0 w-96 h-96 bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1.2, 0.9, 1.2], opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-br from-purple-400/15 to-pink-400/15 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ y: [0, -30, 0], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+          className="absolute top-1/3 left-1/3 w-64 h-64 bg-gradient-to-br from-yellow-300/10 to-pink-300/10 rounded-full blur-3xl"
+        />
+
+        {/* Subtle Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.02]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, #000 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
+
+        {/* Floating Decorative Image Cards - Foreground */}
+        <motion.div
+          animate={{ y: [0, -15, 0], rotate: [-3, 3, -3] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-20 right-12 w-40 h-28 rounded-2xl overflow-hidden shadow-xl border-2 border-white/60 hidden lg:block z-20"
+        >
+          <img src="https://images.unsplash.com/photo-1583821017783-4333717df070?w=200&auto=format&fit=crop" alt="Golden Temple" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 12, 0], rotate: [2, -4, 2] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-2 left-12 w-36 h-24 rounded-2xl overflow-hidden shadow-xl border-2 border-white/60 hidden xl:block z-20"
+        >
+          <img src="https://images.unsplash.com/photo-1598431416007-869a2a727f8b?w=200&auto=format&fit=crop" alt="Wagah Border" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </motion.div>
+
+        {/* Floating Badge */}
+        <motion.div
+          animate={{ y: [0, -8, 0], opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute top-28 left-1/4 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg border border-pink-100 hidden lg:flex items-center gap-2"
+        >
+          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <span className="text-xs font-semibold text-[#1f1f1f]">AI-Powered</span>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 8, 0], opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute bottom-12 right-1/4 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg border border-purple-100 hidden xl:flex items-center gap-2"
+        >
+          <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+          <span className="text-xs font-semibold text-[#1f1f1f] ">50+ Hidden Gems</span>
+        </motion.div>
+
+        {/* Animated Particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(12)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1.5 h-1.5 rounded-full"
+              style={{
+                left: `${(i * 8 + 2) % 100}%`,
+                top: `${(i * 12 + 5) % 100}%`,
+                background: i % 2 === 0 ? '#d80c8c' : '#7b2cbf',
+              }}
+              animate={{
+                y: [0, -60 - i * 10, 0],
+                opacity: [0, 0.4, 0],
+                scale: [0, 1.2, 0],
+              }}
+              transition={{
+                duration: 6 + (i % 3),
+                repeat: Infinity,
+                delay: i * 0.7,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -476,85 +563,71 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
+      {/* Features & Capabilities */}
+      <section className="py-28 relative overflow-hidden bg-gradient-to-br from-white via-pink-50/30 to-white">
+        {/* Decorative Background Elements */}
+        <motion.div
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-pink-400/15 to-purple-400/15 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1.1, 0.9, 1.1], opacity: [0.15, 0.3, 0.15] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-3xl"
+        />
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.015]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, #7b2cbf 1px, transparent 0)`,
+          backgroundSize: '30px 30px'
+        }} />
+
+        <div className="relative max-w-7xl mx-auto px-6 md:px-10">
           <div className="text-center mb-20">
             <motion.span
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              className="bg-pink-100 text-pink-600 px-5 py-2 rounded-full text-sm font-bold"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-100 to-purple-100 text-pink-600 px-6 py-2.5 rounded-full text-sm font-bold shadow-sm"
             >
-              COMPREHENSIVE FEATURES
+              <Crown className="w-4 h-4" />
+              FEATURES & CAPABILITIES
             </motion.span>
-            <h2 className="text-5xl md:text-6xl font-black mt-8">
+            <h2 className="text-5xl md:text-6xl font-black mt-8 leading-tight">
               Everything Included In
+              <br />
               <span className="bg-gradient-to-r from-[#d80c8c] to-[#7b2cbf] bg-clip-text text-transparent">
-                {" "}
                 Royal Amritsar
               </span>
             </h2>
-            <p className="mt-6 text-xl text-[#5b6475] max-w-3xl mx-auto">
-              From personalized itineraries to real-time updates, we&apos;ve got every aspect of your Amritsar journey covered.
+            <p className="mt-6 text-xl text-[#5b6475] max-w-3xl mx-auto leading-relaxed">
+              From city attractions to booking support — 20 premium capabilities designed to make your Amritsar journey seamless, smart, and unforgettable.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              {
-                title: "Personalized Smart Itinerary",
-                desc: "Customized around your trip dates, travel style, and preferences. Get AI-powered recommendations tailored just for you.",
-                icon: Route,
-                image: featureImages[0]
-              },
-              {
-                title: "Hidden Gems",
-                desc: "Discover premium local experiences beyond tourist content. Uncover the real Amritsar secrets.",
-                icon: Sparkles,
-                image: featureImages[1]
-              },
-              {
-                title: "Live Crowd Intelligence",
-                desc: "Know the best timings and avoid unnecessary rush. Real-time insights to beat the crowds.",
-                icon: Clock3,
-                image: featureImages[2]
-              },
-              {
-                title: "Dynamic Route Optimization",
-                desc: "Smarter attraction sequencing and reduced travel fatigue. Save hours of walking.",
-                icon: MapPinned,
-                image: featureImages[3]
-              },
-              {
-                title: "Premium Food Recommendations",
-                desc: "Authentic Punjabi food, hidden cafes, and local favorites. Taste Amritsar like a local.",
-                icon: UtensilsCrossed,
-                image: featureImages[4]
-              },
-              {
-                title: "Live Alerts & Suggestions",
-                desc: "Closures, event rush, and dynamic trip updates. Stay informed in real-time.",
-                icon: BellRing,
-                image: featureImages[5]
-              },
-              {
-                title: "Safety & Scam Awareness",
-                desc: "Avoid common tourist scams and travel safely. Expert guidance to protect your trip.",
-                icon: ShieldCheck,
-                image: featureImages[6]
-              },
-              {
-                title: "Priority Support",
-                desc: "Get help with routes, food, and better travel decisions. 24/7 traveler support.",
-                icon: Users,
-                image: featureImages[7]
-              },
-              {
-                title: "Offline Downloadable Access",
-                desc: "Everything available even during low network situations. Never be lost offline.",
-                icon: Download,
-                image: featureImages[8]
-              },
+              { title: "City Attractions", desc: "Curated list of must-visit landmarks, temples, and historical sites with insider tips.", icon: History },
+              { title: "Personalized Itinerary Builder", desc: "AI-powered itinerary tailored to your dates, style, and preferences in seconds.", icon: Route },
+              { title: "Multi-Day Journeys", desc: "Optimized multi-day trip plans with smart sequencing and rest recommendations.", icon: MapPinned },
+              { title: "Hidden Gems", desc: "50+ secret spots and local favorites that most tourists never discover.", icon: Sparkles },
+              { title: "Handpicked Experiences", desc: "Premium curated experiences — from heritage walks to cultural workshops.", icon: Star },
+              { title: "Local Guru Recommendations", desc: "Insider knowledge from local experts — tips you won't find on any guide.", icon: Users },
+              { title: "Food Recommendations", desc: "Authentic Punjabi dining — from legendary dhabas to hidden rooftop cafes.", icon: UtensilsCrossed },
+              { title: "Smart Shopping Guide", desc: "Best markets, bargaining tips, and authentic souvenir spots with honest pricing.", icon: Crown },
+              { title: "Transit + Route Optimization", desc: "Smart routing across auto-rickshaws, cabs, and walking paths for efficiency.", icon: Zap },
+              { title: "Best Entry/Exit Strategy", desc: "Timing intelligence for every attraction — avoid queues, enter at the right moment.", icon: CheckCircle2 },
+              { title: "Live Alerts", desc: "Real-time notifications on closures, rush hours, events, and weather changes.", icon: BellRing },
+              { title: "Festivals & Celebrations", desc: "Calendar of local festivals, celebrations, and cultural events during your stay.", icon: Camera },
+              { title: "Safe Travel Companion", desc: "Safety alerts, scam warnings, emergency contacts, and secure route suggestions.", icon: ShieldCheck },
+              { title: "Time-Slot Optimization", desc: "AI-driven timing for each attraction — beat the crowds every single time.", icon: Clock3 },
+              { title: "Budget Optimization Tips", desc: "Smart spending advice — save money without compromising on experiences.", icon: Download },
+              { title: "Premium Dining", desc: "Top-rated fine dining, heritage restaurants, and premium culinary experiences.", icon: Crown },
+              { title: "Nightlife Recommendations", desc: "Curated nightlife — from rooftop bars to cultural evening shows and music.", icon: Zap },
+              { title: "Booking Support", desc: "Full integration for restaurant, activity, and experience bookings within the app.", icon: UtensilsCrossed },
+              { title: "Offline Access", desc: "Download everything — itineraries, maps, guides — for zero-network peace of mind.", icon: Download },
+              { title: "Priority Support", desc: "24/7 chat assistance with real-time help for routes, food, and travel decisions.", icon: Users },
             ].map((item, i) => {
               const IconComponent = item.icon;
               return (
@@ -563,50 +636,58 @@ export default function Home() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  whileHover={{ y: -8, boxShadow: "0 30px 60px rgba(216, 12, 140, 0.2)" }}
-                  className="group relative bg-white rounded-[36px] p-0 shadow-lg overflow-hidden border border-transparent hover:border-pink-200 transition-all duration-500 flex flex-col"
+                  transition={{ delay: i * 0.04 }}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  className="group relative bg-white rounded-2xl p-6 shadow-md border border-pink-100/30 hover:shadow-xl hover:border-pink-200/50 transition-all duration-500 overflow-hidden"
                 >
-                  {/* Image Header */}
-                  <div className="h-40 overflow-hidden rounded-t-[36px] relative flex-shrink-0">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  </div>
+                  {/* Hover Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#d80c8c]/5 to-[#7b2cbf]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+                  
+                  {/* Left Accent Bar */}
+                  <div className="absolute left-0 top-4 bottom-4 w-1 bg-gradient-to-b from-[#d80c8c] to-[#7b2cbf] rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="p-8 relative flex-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#d80c8c] to-[#7b2cbf] opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-b-[36px]" />
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <motion.div
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-50 to-purple-50 flex items-center justify-center mb-4 group-hover:from-[#d80c8c] group-hover:to-[#7b2cbf] transition-all duration-500 shadow-sm group-hover:shadow-md"
+                    >
+                      <IconComponent className="w-5 h-5 text-[#7b2cbf] group-hover:text-white transition-colors duration-500" />
+                    </motion.div>
 
-                    <div className="relative z-10">
-                      <motion.div
-                        whileHover={{ scale: 1.1, rotate: 10 }}
-                        className="w-16 h-16 rounded-2xl bg-gradient-to-r from-pink-100 to-purple-100 mb-6 flex items-center justify-center text-[#7b2cbf] shadow-lg transition-all duration-500 group-hover:from-white/30 group-hover:to-white/10 group-hover:text-white"
-                      >
-                        <IconComponent className="w-8 h-8 text-[#7b2cbf] stroke-current group-hover:stroke-white group-hover:text-white transition-all duration-500" />
-                      </motion.div>
+                    {/* Title */}
+                    <h3 className="text-base font-bold text-[#1f1f1f] group-hover:text-[#d80c8c] transition-colors duration-300 leading-snug">
+                      {item.title}
+                    </h3>
 
-                      <h3 className="text-2xl font-black group-hover:text-white transition-colors duration-300">
-                        {item.title}
-                      </h3>
-
-                      <p className="mt-5 text-lg leading-relaxed text-[#5b6475] group-hover:text-white/90 transition-colors duration-300">
-                        {item.desc}
-                      </p>
-
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileHover={{ width: "100%" }}
-                        className="mt-6 h-1 bg-white/30 rounded-full"
-                      />
-                    </div>
+                    {/* Description */}
+                    <p className="mt-2 text-sm text-[#5b6475] leading-relaxed group-hover:text-[#24324A] transition-colors duration-300">
+                      {item.desc}
+                    </p>
                   </div>
                 </motion.div>
               );
             })}
           </div>
+
+          {/* Bottom Emphasis */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+            className="mt-16 text-center"
+          >
+            <div className="inline-flex items-center gap-3 bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl px-8 py-5 shadow-sm border border-pink-100">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#d80c8c] to-[#7b2cbf] flex items-center justify-center text-white flex-shrink-0">
+                <Crown className="w-5 h-5" />
+              </div>
+              <p className="text-[#1f1f1f] font-semibold text-lg">
+                All 20 features included in 
+                <span className="bg-gradient-to-r from-[#d80c8c] to-[#7b2cbf] bg-clip-text text-transparent font-black"> ₹999 Royal Amritsar Access</span>
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
