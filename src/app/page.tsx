@@ -19,7 +19,6 @@ import {
   Heart,
   Star,
   Zap,
-  Gift,
 } from "lucide-react";
 
 export default function Home() {
@@ -477,7 +476,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mt-6 text-xl text-[#5b6475] max-w-3xl mx-auto">
-              From personalized itineraries to real-time updates, we've got every aspect of your Amritsar journey covered.
+              From personalized itineraries to real-time updates, we&apos;ve got every aspect of your Amritsar journey covered.
             </p>
           </div>
 
@@ -611,7 +610,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="mt-6 text-xl text-[#5b6475] max-w-3xl mx-auto">
-              From spiritual sanctuaries to historical landmarks, experience the essence of Punjab's cultural capital.
+              From spiritual sanctuaries to historical landmarks, experience the essence of Punjab&apos;s cultural capital.
             </p>
           </div>
 
@@ -768,7 +767,7 @@ export default function Home() {
 
                 {/* Text */}
                 <p className="text-lg text-[#5b6475] leading-relaxed italic mb-8">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
 
                 {/* User Info */}
@@ -912,7 +911,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-7xl font-black leading-tight">
-              Don't Just Visit
+              Don&apos;t Just Visit
               <br />
               Amritsar.
               <br />
