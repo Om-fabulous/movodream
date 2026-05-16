@@ -349,6 +349,150 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Video Showcase */}
+      <section className="py-28 relative overflow-hidden bg-gradient-to-br from-white via-pink-50/20 to-white">
+        {/* Decorative Background Elements */}
+        <motion.div
+          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-pink-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ scale: [1.2, 0.8, 1.2], opacity: [0.15, 0.4, 0.15] }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 3 }}
+          className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-br from-purple-400/15 to-pink-400/15 rounded-full blur-3xl"
+        />
+
+        <div className="relative max-w-6xl mx-auto px-6 md:px-10">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-100 to-purple-100 text-pink-600 px-5 py-2 rounded-full text-sm font-bold"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                WATCH THE EXPERIENCE
+              </motion.span>
+
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mt-8 leading-tight">
+                See How Royal Amritsar
+                <br />
+                <span className="bg-gradient-to-r from-[#d80c8c] to-[#7b2cbf] bg-clip-text text-transparent">
+                  Transforms Your Trip
+                </span>
+              </h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="mt-6 text-lg text-[#5b6475] leading-relaxed"
+              >
+                Watch how our AI-powered smart travel system helps you discover hidden gems, avoid tourist traps, optimize your routes in real-time, and experience Amritsar like a true insider — all from one seamless platform.
+              </motion.p>
+
+              {/* Feature list */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="mt-8 space-y-4"
+              >
+                {[
+                  "AI-powered personalized itinerary generation",
+                  "Real-time crowd intelligence & route optimization",
+                  "50+ hidden gems & local secret recommendations",
+                  "Live alerts, offline access & 24/7 support"
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.08 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#d80c8c] to-[#7b2cbf] flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                    </div>
+                    <span className="text-[#5b6475]">{item}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right Video */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              {/* Glow behind video */}
+              <motion.div
+                animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.7, 0.4] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 bg-gradient-to-r from-[#d80c8c]/30 to-[#7b2cbf]/30 blur-3xl rounded-[40px]"
+              />
+
+              {/* Video Container */}
+              <div className="relative group">
+                {/* Video Frame */}
+                <div className="relative overflow-hidden rounded-[24px] md:rounded-[32px] shadow-2xl border-2 border-white/50">
+                  <video
+                    className="w-full h-auto aspect-video object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster="/golden.png"
+                  >
+                    <source src="/movodream.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+
+                  {/* Auto-Playing Indicator */}
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-black/40 backdrop-blur-sm px-3 py-1.5 rounded-full pointer-events-none">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                    <span className="text-white/80 text-xs font-medium">Playing</span>
+                  </div>
+                </div>
+
+                {/* Bottom accent badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6 }}
+                  className="mt-4 flex items-center justify-center gap-4 text-sm text-[#5b6475]"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                    Premium Demo
+                  </span>
+                  <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span className="flex items-center gap-1.5">1:30 min</span>
+                  <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span className="flex items-center gap-1.5">4K Available</span>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Introduction */}
       <section className="py-28 relative overflow-hidden bg-gradient-to-br from-white via-pink-50/40 to-white">
         {/* Decorative Gradient Orbs */}
