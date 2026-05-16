@@ -1033,7 +1033,7 @@ export default function Home() {
       {/* Audience */}
       <section className="py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 mt-[-120]">
             <h2 className="text-5xl md:text-6xl font-black">
               Perfect For Travelers
               <br />
